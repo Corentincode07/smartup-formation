@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Symbiose — La solution RH tout-en-un pour piloter votre entreprise. Congés, entretiens, recrutement, conformité. SMARTUP Formation.">
+  <title>Symbiose — Solution RH tout-en-un | SMARTUP Formation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    /* ── Symbiose page styles ── */
+    .sym-label {
+      display: inline-block;
+      font-family: 'Poppins', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #B8943A;
+      margin-bottom: 14px;
+    }
+    .sym-h1 {
+      font-family: 'Poppins', sans-serif;
+      font-size: clamp(28px, 4vw, 44px);
+      font-weight: 700;
+      color: #1C2B4A;
+      line-height: 1.2;
+      margin: 0 0 20px 0;
+    }
+    .sym-h2 {
+      font-family: 'Poppins', sans-serif;
+      font-size: clamp(22px, 3vw, 34px);
+      font-weight: 700;
+      color: #1C2B4A;
+      margin: 0 0 14px 0;
+    }
+    .sym-lead {
+      font-family: 'Poppins', sans-serif;
+      font-size: 16px;
+      color: #6b7280;
+      line-height: 1.7;
+      margin-bottom: 28px;
+    }
+    .sym-subtitle {
+      font-family: 'Poppins', sans-serif;
+      font-size: 16px;
+      color: #6b7280;
+      max-width: 560px;
+      margin: 0 auto 48px;
+      line-height: 1.6;
+    }
+    /* Hero badges */
+    .sym-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 32px;
+    }
+    .sym-badge {
+      background: #fdf6e8;
+      border: 1px solid #B8943A;
+      color: #B8943A;
+      font-family: 'Poppins', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 6px 16px;
+      border-radius: 20px;
+    }
+    /* Hero btn */
+    .sym-btn {
+      display: inline-block;
+      background: #B8943A;
+      color: white;
+      font-family: 'Poppins', sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      padding: 14px 36px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .sym-btn:hover { background: #9a7a2e; color: white; }
+    /* Module cards */
+    .sym-modules-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .sym-module-card {
+      background: white;
+      border-radius: 16px;
+      padding: 28px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .sym-module-card:hover {
+      box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+      transform: translateY(-4px);
+    }
+    .sym-module-icon {
+      width: 48px;
+      height: 48px;
+      background: #fdf6e8;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 18px;
+    }
+    .sym-module-card h3 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 17px;
+      font-weight: 600;
+      color: #1C2B4A;
+      margin: 0 0 10px 0;
+    }
+    .sym-module-card p {
+      font-family: 'Poppins', sans-serif;
+      font-size: 14px;
+      color: #6b7280;
+      line-height: 1.6;
+      margin: 0;
+    }
+    /* Pack cards */
+    .sym-packs-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-bottom: 24px;
+    }
+    .sym-pack-card {
+      border-radius: 16px;
+      padding: 32px 28px;
+      display: flex;
+      flex-direction: column;
+    }
+    .sym-pack-badge {
+      display: inline-block;
+      background: #fdf6e8;
+      border: 1px solid #B8943A;
+      color: #B8943A;
+      font-family: 'Poppins', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 3px 10px;
+      border-radius: 12px;
+      margin-bottom: 14px;
+      align-self: flex-start;
+    }
+    .sym-pack-card h3 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: #1C2B4A;
+      margin: 0 0 8px 0;
+    }
+    .sym-pack-card > p {
+      font-family: 'Poppins', sans-serif;
+      font-size: 14px;
+      color: #6b7280;
+      margin: 0 0 20px 0;
+    }
+    .sym-pack-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 24px 0;
+      flex: 1;
+    }
+    .sym-pack-list li {
+      font-family: 'Poppins', sans-serif;
+      font-size: 14px;
+      color: #374151;
+      padding: 6px 0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .sym-pack-list li::before {
+      content: '✓';
+      color: #B8943A;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    .sym-pack-price {
+      font-family: 'Poppins', sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+      color: #1C2B4A;
+      margin: 0;
+    }
+    .sym-pack-price span {
+      font-size: 13px;
+      font-weight: 400;
+      color: #9ca3af;
+    }
+    .sym-popular-badge {
+      background: #B8943A;
+      color: white;
+      font-family: 'Poppins', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 12px;
+      align-self: flex-start;
+      margin-bottom: 6px;
+    }
+    /* Integral card */
+    .sym-integral-card {
+      background: #1C2B4A;
+      border-radius: 16px;
+      padding: 40px;
+    }
+    .sym-integral-card h3 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: white;
+      margin: 0 0 10px 0;
+    }
+    .sym-integral-card > p {
+      font-family: 'Poppins', sans-serif;
+      font-size: 15px;
+      color: rgba(255,255,255,0.7);
+      margin: 0 0 28px 0;
+    }
+    .sym-integral-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: rgba(255,255,255,0.08);
+      border-radius: 12px;
+      overflow: hidden;
+      margin-bottom: 32px;
+    }
+    .sym-integral-table th {
+      background: rgba(255,255,255,0.12);
+      color: rgba(255,255,255,0.9);
+      font-family: 'Poppins', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 12px 18px;
+      text-align: left;
+    }
+    .sym-integral-table td {
+      color: rgba(255,255,255,0.75);
+      font-family: 'Poppins', sans-serif;
+      font-size: 14px;
+      padding: 12px 18px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+    .sym-integral-table tr:last-child td {
+      color: white;
+      font-weight: 600;
+      background: rgba(184,148,58,0.15);
+    }
+    /* Testi cards */
+    .sym-testi-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .sym-testi-card {
+      background: white;
+      border-radius: 16px;
+      padding: 28px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    }
+    .sym-stars {
+      color: #B8943A;
+      font-size: 16px;
+      margin-bottom: 14px;
+    }
+    .sym-testi-card blockquote {
+      font-family: 'Poppins', sans-serif;
+      font-size: 14px;
+      color: #374151;
+      line-height: 1.7;
+      margin: 0 0 20px 0;
+      font-style: italic;
+    }
+    .sym-testi-author {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .sym-avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: #1C2B4A;
+      color: white;
+      font-family: 'Poppins', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .sym-author-name {
+      font-family: 'Poppins', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      color: #1C2B4A;
+      margin: 0 0 2px 0;
+    }
+    .sym-author-role {
+      font-family: 'Poppins', sans-serif;
+      font-size: 12px;
+      color: #9ca3af;
+      margin: 0;
+    }
+    @media (max-width: 900px) {
+      .sym-modules-grid, .sym-packs-grid, .sym-testi-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar" id="navbar">
+  <div class="navbar-container">
+    <a href="index.html" class="navbar-logo"><img src="https://smartup-formation.com/wp-content/uploads/2024/09/logo-couleur-smartup@2x.png" alt="SMARTUP Formation" style="height:45px;width:auto"></a>
+    <ul class="navbar-nav">
+      <li class="nav-item"><a href="index.html" class="nav-link">Accueil</a></li>
+      <li class="nav-item"><a href="a-propos.html" class="nav-link">À propos</a></li>
+      <li class="nav-item">
+        <a href="#" class="nav-link">Nos solutions <span class="nav-arrow">▾</span></a>
+        <div class="dropdown">
+          <div class="dd-col">
+            <p class="dd-col-title">Formations</p>
+            <ul>
+              <li><a href="formations.html#pratiques">Pratiques managériales</a></li>
+              <li><a href="formations.html#performance">Performance opérationnelle</a></li>
+              <li><a href="formations.html#developpement">Développement personnel du manager</a></li>
+            </ul>
+          </div>
+          <div class="dd-col">
+            <p class="dd-col-title">Recrutement</p>
+            <ul>
+              <li><a href="recrutement.html#simplifier">Simplifier vos recrutements</a></li>
+              <li><a href="recrutement.html#booster">Booster votre attractivité</a></li>
+              <li><a href="recrutement.html#reussir">Réussir vos intégrations</a></li>
+            </ul>
+          </div>
+          <div class="dd-col dd-symbiose">
+            <p class="dd-col-title">Symbiose</p>
+            <p>Notre solution RH innovante pour accompagner les PME dans leur transformation.</p>
+            <a href="symbiose.html" class="dd-symbiose-btn">Découvrir →</a>
+          </div>
+        </div>
+      </li>
+    </ul>
+    <div class="navbar-right">
+      <a href="tel:+33789261312" style="display: flex; align-items: center; gap: 8px; color: #2d2d2d; text-decoration: none; font-weight: 600; font-size: 15px;">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#B8943A" style="width: 20px; height: 20px; flex-shrink: 0;">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
+        </svg>
+        07.89.26.13.12
+      </a>
+      <a href="contact.html" class="nav-link nav-cta">Nous contacter</a>
+    </div>
+    <button class="navbar-burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobileNav">
+      <span class="burger-line"></span><span class="burger-line"></span><span class="burger-line"></span>
+    </button>
+  </div>
+  <div class="navbar-mobile" id="mobileNav">
+    <a href="index.html" class="mob-link">Accueil</a>
+    <a href="a-propos.html" class="mob-link">À propos</a>
+    <div class="mob-accordion">
+      <button class="mob-accordion-btn" aria-expanded="false" aria-controls="mob-solutions">
+        Nos solutions <span class="mob-acc-arrow">▾</span>
+      </button>
+      <div class="mob-accordion-body" id="mob-solutions">
+        <p class="mob-group-title">Formations</p>
+        <a href="formations.html#pratiques" class="mob-sub-link">Pratiques managériales</a>
+        <a href="formations.html#performance" class="mob-sub-link">Performance opérationnelle</a>
+        <a href="formations.html#developpement" class="mob-sub-link">Développement personnel</a>
+        <p class="mob-group-title">Recrutement</p>
+        <a href="recrutement.html#simplifier" class="mob-sub-link">Simplifier vos recrutements</a>
+        <a href="recrutement.html#booster" class="mob-sub-link">Booster votre attractivité</a>
+        <a href="recrutement.html#reussir" class="mob-sub-link">Réussir vos intégrations</a>
+        <p class="mob-group-title">Symbiose</p>
+        <a href="symbiose.html" class="mob-sub-link">Découvrir Symbiose</a>
+      </div>
+    </div>
+    <a href="tel:0789261312" class="mob-link">📞 07.89.26.13.12</a>
+    <a href="contact.html" class="mob-cta">Nous contacter</a>
+  </div>
+</nav>
+
+<!-- ===== SECTION 1 — HERO ===== -->
+<section style="background: white; padding: 80px;">
+  <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center;">
+    <div>
+      <img
+        src="https://symbiose-team.com/wp-content/uploads/2026/03/symbiose-dashboard-hero-scaled.png"
+        alt="Interface Symbiose"
+        style="width: 100%; border-radius: 16px; box-shadow: 0 8px 32px rgba(0,0,0,0.1); display: block;"
+      >
+    </div>
+    <div>
+      <span class="sym-label">Solution RH tout-en-un</span>
+      <h1 class="sym-h1">Piloter son entreprise n'a jamais été aussi simple.</h1>
+      <p class="sym-lead">Visualisez, organisez et automatisez la gestion de votre organisation. Une plateforme unique pour structurer vos processus, garantir la conformité et libérer du temps pour vos équipes.</p>
+      <div class="sym-badges">
+        <span class="sym-badge">Déploiement rapide</span>
+        <span class="sym-badge">Conformité garantie</span>
+        <span class="sym-badge">Interface intuitive</span>
+      </div>
+      <a href="contact.html" class="sym-btn">Nous contacter</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SECTION 2 — MODULES ===== -->
+<section style="background: #fdf6e8; padding: 80px;">
+  <div style="max-width: 1200px; margin: 0 auto;">
+    <div style="text-align: center; margin-bottom: 48px;">
+      <span class="sym-label">Nos modules</span>
+      <h2 class="sym-h2">Modules complets pour votre entreprise</h2>
+      <p class="sym-subtitle">Une suite d'outils pensée pour simplifier la gestion de votre entreprise</p>
+    </div>
+    <div class="sym-modules-grid">
+
+      <!-- Congés -->
+      <div class="sym-module-card">
+        <div class="sym-module-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="#B8943A" width="24" height="24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5" />
+          </svg>
+        </div>
+        <h3>Gestion des Congés</h3>
+        <p>Validez les demandes en un clic. Visualisez les absences sur un calendrier centralisé.</p>
+      </div>
+
+      <!-- Entretiens -->
+      <div class="sym-module-card">
+        <div class="sym-module-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="#B8943A" width="24" height="24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z" />
+          </svg>
+        </div>
+        <h3>Entretiens</h3>
+        <p>Planifiez et suivez les entretiens annuels. Centralisez feedbacks et objectifs.</p>
+      </div>
+
+      <!-- Baromètre -->
+      <div class="sym-module-card">
+        <div class="sym-module-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="#B8943A" width="24" height="24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
+          </svg>
+        </div>
+        <h3>Baromètre Humeur</h3>
+        <p>Suivez le ressenti de vos équipes en temps réel. Détectez les signaux faibles.</p>
+      </div>
+
+      <!-- Recrutement -->
+      <div class="sym-module-card">
+        <div class="sym-module-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="#B8943A" width="24" height="24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
+          </svg>
+        </div>
+        <h3>Recrutement</h3>
+        <p>Suivez vos candidatures de A à Z. Collaborez avec votre équipe sur chaque profil.</p>
+      </div>
+
+      <!-- Documents -->
+      <div class="sym-module-card">
+        <div class="sym-module-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="#B8943A" width="24" height="24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12.75V12A2.25 2.25 0 0 1 4.5 9.75h15A2.25 2.25 0 0 1 21.75 12v.75m-8.69-6.44-2.12-2.12a1.5 1.5 0 0 0-1.061-.44H4.5A2.25 2.25 0 0 0 2.25 6v8.25A2.25 2.25 0 0 0 4.5 16.5h15a2.25 2.25 0 0 0 2.25-2.25V8.25A2.25 2.25 0 0 0 19.5 6h-5.879a1.5 1.5 0 0 1-1.06-.44Z" />
+          </svg>
+        </div>
+        <h3>Documents &amp; Dossiers</h3>
+        <p>Centralisez contrats, avenants, bulletins. Un accès sécurisé et structuré.</p>
+      </div>
+
+      <!-- Conformité -->
+      <div class="sym-module-card">
+        <div class="sym-module-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="#B8943A" width="24" height="24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z" />
+          </svg>
+        </div>
+        <h3>Conformité &amp; Sécurité</h3>
+        <p>Restez conforme aux réglementations. Sécurisez toutes vos données.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== SECTION 3 — PACKS ===== -->
+<section style="background: white; padding: 80px;">
+  <div style="max-width: 1200px; margin: 0 auto;">
+    <div style="text-align: center; margin-bottom: 48px;">
+      <span class="sym-label">Nos packs</span>
+      <h2 class="sym-h2">Choisissez le pack adapté à votre équipe</h2>
+      <p class="sym-subtitle">Composez vos outils en fonction de vos besoins. Essai gratuit, sans engagement.</p>
+    </div>
+
+    <div class="sym-packs-grid">
+
+      <!-- Essentiel -->
+      <div class="sym-pack-card" style="border: 1px solid #e8e0d0;">
+        <span class="sym-pack-badge">Pack</span>
+        <h3>Essentiel</h3>
+        <p>Les fondamentaux du pilotage RH.</p>
+        <ul class="sym-pack-list">
+          <li>Espace collaborateur</li>
+          <li>Entretiens (IA)</li>
+          <li>Baromètre engagement</li>
+          <li>Gestion congés</li>
+          <li>Tableaux de bord</li>
+          <li>Documents sécurisés</li>
+        </ul>
+        <p class="sym-pack-price">À partir de 5€ HT <span>/salarié /mois</span></p>
+      </div>
+
+      <!-- Acquisition -->
+      <div class="sym-pack-card" style="border: 2px solid #B8943A;">
+        <span class="sym-popular-badge">Le plus populaire</span>
+        <span class="sym-pack-badge">Pack</span>
+        <h3>Acquisition</h3>
+        <p>Structurez vos recrutements. Sécurisez vos embauches.</p>
+        <ul class="sym-pack-list">
+          <li>Viviers de talents</li>
+          <li>Offres d'emploi IA</li>
+          <li>Diffusion offres</li>
+          <li>Suivi recrutements</li>
+          <li>Onboarding</li>
+          <li>Partage managers</li>
+        </ul>
+        <p class="sym-pack-price">À partir de 199€ HT <span>/mois</span></p>
+      </div>
+
+      <!-- Conformité -->
+      <div class="sym-pack-card" style="border: 1px solid #e8e0d0;">
+        <span class="sym-pack-badge">Pack</span>
+        <h3>Conformité</h3>
+        <p>Vos conformités réglementaires maîtrisées.</p>
+        <ul class="sym-pack-list">
+          <li>Alertes RH</li>
+          <li>Suivi conformité</li>
+          <li>Aide rédaction contrats</li>
+          <li>Évaluation risques</li>
+        </ul>
+        <p class="sym-pack-price">À partir de 6€ HT <span>/salarié /mois</span></p>
+      </div>
+
+    </div>
+
+    <!-- Pack Intégral -->
+    <div class="sym-integral-card">
+      <h3>Pack Intégral — Le meilleur rapport qualité-prix</h3>
+      <p>Combinez les 3 packs et bénéficiez d'un tarif préférentiel.</p>
+      <table class="sym-integral-table">
+        <thead>
+          <tr>
+            <th>Packs</th>
+            <th>1–20 salariés</th>
+            <th>+20 salariés</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Essentiel</td>
+            <td>Inclus</td>
+            <td>5€ HT/salarié/mois</td>
+          </tr>
+          <tr>
+            <td>Acquisition</td>
+            <td>Inclus</td>
+            <td>199€ HT/mois OFFERT</td>
+          </tr>
+          <tr>
+            <td>Conformité</td>
+            <td>Inclus</td>
+            <td>6€ HT/salarié/mois</td>
+          </tr>
+          <tr>
+            <td>Pack Intégral</td>
+            <td>99€ HT/mois</td>
+            <td>+11€ HT/salarié/mois</td>
+          </tr>
+        </tbody>
+      </table>
+      <div style="text-align: center;">
+        <a href="contact.html" class="sym-btn">Demander une démo</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== SECTION 4 — TÉMOIGNAGES ===== -->
+<section style="background: #fdf6e8; padding: 80px;">
+  <div style="max-width: 1200px; margin: 0 auto;">
+    <div style="text-align: center; margin-bottom: 48px;">
+      <span class="sym-label">Ils nous font confiance</span>
+      <h2 class="sym-h2">Ils utilisent Symbiose au quotidien</h2>
+    </div>
+    <div class="sym-testi-grid">
+
+      <div class="sym-testi-card">
+        <div class="sym-stars">★★★★★</div>
+        <blockquote>"Avant Symbiose, les demandes de congés passaient par email ou Post-it. On a réduit de 40% le temps passé sur l'administratif RH."</blockquote>
+        <div class="sym-testi-author">
+          <div class="sym-avatar">SL</div>
+          <div>
+            <p class="sym-author-name">Sophie L.</p>
+            <p class="sym-author-role">DRH — PME industrielle, 85 salariés</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="sym-testi-card">
+        <div class="sym-stars">★★★★★</div>
+        <blockquote>"Je n'avais pas les moyens d'embaucher un RH. Symbiose me donne une vision claire de mon équipe et m'alerte quand un document approche. C'est devenu mon copilote."</blockquote>
+        <div class="sym-testi-author">
+          <div class="sym-avatar">TM</div>
+          <div>
+            <p class="sym-author-name">Thomas M.</p>
+            <p class="sym-author-role">Gérant — Société de services, 22 salariés</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="sym-testi-card">
+        <div class="sym-stars">★★★★★</div>
+        <blockquote>"Le module Conformité nous a évité un vrai problème lors d'un contrôle. DUERP à jour, registres accessibles en deux clics. On était prêts."</blockquote>
+        <div class="sym-testi-author">
+          <div class="sym-avatar">NB</div>
+          <div>
+            <p class="sym-author-name">Nadia B.</p>
+            <p class="sym-author-role">DAF — Réseau de franchises, 150 salariés</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== SECTION 5 — CTA FINAL ===== -->
+<section style="background: #1C2B4A; padding: 80px; text-align: center;">
+  <div style="max-width: 640px; margin: 0 auto;">
+    <h2 style="font-family: 'Poppins', sans-serif; font-size: clamp(22px, 3vw, 34px); font-weight: 700; color: white; margin: 0 0 16px 0;">Prêt à transformer votre gestion RH ?</h2>
+    <p style="font-family: 'Poppins', sans-serif; font-size: 16px; color: rgba(255,255,255,0.7); line-height: 1.7; margin: 0 0 36px 0;">Contactez-nous pour découvrir comment Symbiose peut simplifier votre quotidien.</p>
+    <a href="contact.html" class="sym-btn">Nous contacter</a>
+  </div>
+</section>
+
+<footer style="background: #1C2B4A; padding: 60px 80px 0; font-family: 'Poppins', sans-serif; position: relative; overflow: hidden;">
+  <div style="display: grid; grid-template-columns: 1.3fr 1fr 1fr 1fr; gap: 60px; padding-bottom: 50px;">
+
+    <div>
+      <img src="https://smartup-formation.com/wp-content/uploads/2024/09/logo-blanc@2x.png" alt="SMARTUP Formation" style="height: 55px; width: auto; margin-bottom: 24px; display: block;">
+      <a href="https://smartup-formation.com/wp-content/uploads/2024/10/certificat-QUA006710_0EZQEK0FEX8NF.pdf" target="_blank">
+        <img src="https://smartup-formation.com/wp-content/uploads/2024/09/IMG_6230_PNG.webp" alt="Certification Qualiopi" style="width: 190px; border-radius: 6px; display: block;">
+      </a>
+    </div>
+
+    <div>
+      <h4 style="color: white; font-size: 17px; font-weight: 600; margin: 0 0 10px 0;">Liens rapides</h4>
+      <div style="width: 40px; height: 2px; background: #B8943A; margin-bottom: 20px;"></div>
+      <ul style="list-style: none; padding: 0; margin: 0;">
+        <li style="margin-bottom: 12px;"><a href="a-propos.html" style="color: rgba(255,255,255,0.75); font-size: 14px; text-decoration: none;">À propos</a></li>
+        <li style="margin-bottom: 12px;"><a href="formations.html" style="color: rgba(255,255,255,0.75); font-size: 14px; text-decoration: none;">Nos formations</a></li>
+        <li style="margin-bottom: 12px;"><a href="#" style="color: rgba(255,255,255,0.75); font-size: 14px; text-decoration: none;">Nos coaching</a></li>
+        <li style="margin-bottom: 12px;"><a href="#" style="color: rgba(255,255,255,0.75); font-size: 14px; text-decoration: none;">Nos séminaires</a></li>
+        <li style="margin-bottom: 12px;"><a href="#" style="color: rgba(255,255,255,0.75); font-size: 14px; text-decoration: none;">Catalogue de formation</a></li>
+        <li style="margin-bottom: 12px;"><a href="#" style="color: rgba(255,255,255,0.75); font-size: 14px; text-decoration: none;">Blog</a></li>
+        <li><a href="#" style="color: rgba(255,255,255,0.75); font-size: 14px; text-decoration: none;">Engagement Handicap</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h4 style="color: white; font-size: 17px; font-weight: 600; margin: 0 0 10px 0;">Légales</h4>
+      <div style="width: 40px; height: 2px; background: #B8943A; margin-bottom: 20px;"></div>
+      <ul style="list-style: none; padding: 0; margin: 0;">
+        <li style="margin-bottom: 12px;"><a href="#" style="color: rgba(255,255,255,0.75); font-size: 14px; text-decoration: none;">Politiques de confidentialité</a></li>
+        <li style="margin-bottom: 12px;"><a href="#" style="color: rgba(255,255,255,0.75); font-size: 14px; text-decoration: none;">Mentions légales</a></li>
+        <li style="margin-bottom: 12px;"><a href="#" style="color: rgba(255,255,255,0.75); font-size: 14px; text-decoration: none;">CGU</a></li>
+        <li style="margin-bottom: 12px;"><a href="#" style="color: rgba(255,255,255,0.75); font-size: 14px; text-decoration: none;">Réclamation</a></li>
+        <li style="margin-bottom: 12px;"><a href="#" style="color: rgba(255,255,255,0.75); font-size: 14px; text-decoration: none;">CGV</a></li>
+        <li><a href="#" style="color: rgba(255,255,255,0.75); font-size: 14px; text-decoration: none;">Règlement intérieur</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h4 style="color: white; font-size: 17px; font-weight: 600; margin: 0 0 10px 0;">Restons connectés</h4>
+      <div style="width: 40px; height: 2px; background: #B8943A; margin-bottom: 20px;"></div>
+      <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 16px;">
+        📍
+        <span style="color: rgba(255,255,255,0.75); font-size: 14px; line-height: 1.5;">3 Bd Saint-Symphorien, 57000 Metz</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+        ✉️
+        <span style="color: rgba(255,255,255,0.75); font-size: 14px;">contact@smartup-formation.com</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 28px;">
+        📞
+        <span style="color: rgba(255,255,255,0.75); font-size: 14px;">07.89.26.13.12</span>
+      </div>
+      <div style="display: flex; gap: 12px;">
+        <a href="https://www.facebook.com/profile.php?id=100094695462490" target="_blank" style="width: 42px; height: 42px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.3); display: flex; align-items: center; justify-content: center; color: white; text-decoration: none; transition: border-color 0.2s;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/chris_smartupformation/" target="_blank" style="width: 42px; height: 42px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.3); display: flex; align-items: center; justify-content: center; color: white; text-decoration: none;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="white" stroke="none"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/company/smart-up-formation/" target="_blank" style="width: 42px; height: 42px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.3); display: flex; align-items: center; justify-content: center; color: white; text-decoration: none;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div style="border-top: 1px solid rgba(255,255,255,0.1); padding: 24px 0; display: flex; justify-content: space-between; align-items: center;">
+    <span style="color: rgba(255,255,255,0.4); font-size: 13px;">Réalisé par Pozey</span>
+    <span style="color: rgba(255,255,255,0.4); font-size: 13px;">Copyright © 2024. Tous droits réservés.</span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+
+<button id="scrollTop" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" style="
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  width: 48px;
+  height: 48px;
+  background: #B8943A;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+  z-index: 999;
+  transition: background 0.2s;
+" onmouseover="this.style.background='#9a7a2e'" onmouseout="this.style.background='#B8943A'">
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" style="width: 22px; height: 22px;">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 6.75 12 3m0 0 3.75 3.75M12 3v18" />
+  </svg>
+</button>
+</body>
+</html>
