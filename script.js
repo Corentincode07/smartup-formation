@@ -161,7 +161,6 @@ document.addEventListener('DOMContentLoaded', () => {
      =========================== */
   const scrollBtn = document.getElementById('scrollTop');
   if (scrollBtn) {
-    scrollBtn.style.display = 'none';
     window.addEventListener('scroll', () => {
       if (window.scrollY > 300) {
         scrollBtn.classList.add('visible');

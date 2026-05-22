@@ -1376,5 +1376,30 @@ input, textarea, select { font-size: 15px; font-weight: 400; }
 }
 
 /* Scroll to top */
-#scrollTop { display: none !important; }
-#scrollTop.visible { display: flex !important; }
+#scrollTop {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  width: 48px;
+  height: 48px;
+  background: #B8943A;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+  z-index: 999;
+  transition: background 0.2s, opacity 0.2s;
+  opacity: 0;
+}
+
+#scrollTop.visible {
+  display: flex;
+  opacity: 1;
+}
+
+#scrollTop:hover {
+  background: #9a7a2e;
+}
