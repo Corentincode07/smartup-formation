@@ -163,9 +163,12 @@ document.addEventListener('DOMContentLoaded', () => {
   if (scrollBtn) {
     window.addEventListener('scroll', () => {
       if (window.scrollY > 300) {
-        scrollBtn.classList.add('visible');
+        scrollBtn.style.opacity = '1';
+        scrollBtn.style.visibility = 'visible';
+        scrollBtn.style.display = 'flex';
       } else {
-        scrollBtn.classList.remove('visible');
+        scrollBtn.style.opacity = '0';
+        scrollBtn.style.visibility = 'hidden';
       }
     });
   }
